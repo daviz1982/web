@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap');
+
+:root {
+  --color-bg-body: #393939;
+  --color-text: #adadad;
+  --color-link: #cdcdcd;
+  --color-link-hover: #cffdfd;
+
+  --color-gradient-start: #cacaca;
+  --color-gradient-end: #e8e8e8;
+
+  --header-height: 12vh;
+  --section-height: 90vh;
+  --footer-height: 4vh;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-bg-body);
+  color: var(--color-text);
+  height: 100%;
+  font-family: 'Comfortaa', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
+
+main {
+  animation: 1s init-main ease-in-out;
+  animation-fill-mode: backwards;
+}
+
+header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: var(--header-height);
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 1rem;
+}
+
+header>h1 {
+  font-size: 2.4rem;
+  font-weight: 300;
+  line-height: 2rem;
+  margin-top: 2rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+header>h3 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+section#paco {
+  align-items: center;
+  display: flex;
+  height: var(--section-height);
+  justify-content: center;
+}
+
+a {
+  color: var(--color-link);
+  transition: all .3s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+.image-round {
+  border-radius: 50%;
+  display: block;
+  height: 12rem;
+  background-image: url("../img/128.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 12rem;
+}
+
+.blur {
+  animation: 1s ease-out blurry 1.25s;
+  animation-fill-mode: backwards;
+  border-radius: 50%;
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  /* border-radius: 50%;
+  height: 8rem;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 8rem; */
+}
+
+.inline-list {
+  display: inline-block;
+}
+
+.inline-list li {
+  display: inline-block;
+}
+
+footer {
+  align-items: center;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+footer>nav {
+  display: flex;
+  height: var(--footer-height);
+  justify-content: center;
+}
+
+@keyframes blurry {
+  0% {
+    backdrop-filter: blur(10px);
+  }
+
+  100% {
+    backdrop-filter: blur(0);
+  }
+}
+
+@keyframes init-main {
+  0% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
