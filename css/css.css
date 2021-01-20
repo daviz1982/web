@@ -1,16 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap');
 
 :root {
+  --fonts: 'Comfortaa', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  --h1-fsize: calc(1.5rem + 1vw);
+  --h3-fsize: calc(.5rem + .5vw);
+
   --color-bg-body: #393939;
-  --color-text: #adadad;
+  --color-text: #fdeddd;
   --color-link: #cdcdcd;
   --color-link-hover: #cffdfd;
 
-  --color-gradient-start: #cacaca;
-  --color-gradient-end: #e8e8e8;
+  --color-start-1: #413c8ef7;
+  --color-start-2: #3bd6406e;
+  --color-projects-1: #d1a822e0;
+  --color-projects-2: #d1361bf7;
+  --color-cv-1: #8adf45f7;
+  --color-cv-2: #ff00d49e;
+  --color-contact-1: #9d2babd6;
+  --color-contact-2: #5611b16b;
 
-  --header-height: 12vh;
-  --section-height: 90vh;
+  --header-height: 20vh;
+  --header-min-height: 10rem;
+  --section-height: 100vh;
+  --section-width: 100vw;
   --footer-height: 4vh;
 }
 
@@ -22,53 +35,76 @@
 
 html {
   height: 100%;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
 }
 
 body {
   background-color: var(--color-bg-body);
   color: var(--color-text);
   height: 100%;
-  font-family: 'Comfortaa', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--fonts);
   font-size: 16px;
 }
 
-main {
+.main {
   animation: 1s init-main ease-in-out;
   animation-fill-mode: backwards;
 }
 
-header {
+.main--header {
   align-items: center;
   display: flex;
   flex-direction: column;
   height: var(--header-height);
   justify-content: center;
-  min-height: 2.5rem;
+  min-height: var(--header-min-height);
   padding: 1rem;
+  position: absolute;
+  width: 100%;
 }
 
-header>h1 {
-  font-size: 2.4rem;
+.main--header>h1 {
+  font-size: var(--h1-fsize);
   font-weight: 300;
-  line-height: 2rem;
-  margin-top: 2rem;
-  padding: 0.5rem;
+  line-height: 1;
+  margin-top: 1rem;
+  padding: 1rem 1rem .5rem;
   text-align: center;
 }
 
-header>h3 {
-  font-size: 1.2rem;
+.main--header>h3 {
+  font-size: var(--h3-fsize);
   font-weight: 400;
-  line-height: 2rem;
-  margin-top: 2rem;
+  line-height: 1;
+  margin-top: 1rem;
   text-align: center;
 }
 
-section#paco {
+section.start,
+section.projects,
+section.cv,
+section.contact {
   align-items: center;
+  background: linear-gradient(-30deg, var(--color-start-1), var(--color-start-2));
   display: flex;
   height: var(--section-height);
   justify-content: center;
+  scroll-snap-align: start;
+  width: var(--section-width);
+}
+
+section.projects {
+  background: linear-gradient(-30deg, var(--color-projects-1), var(--color-projects-2));
+}
+
+section.cv {
+  background: linear-gradient(-30deg, var(--color-cv-1), var(--color-cv-2));
+}
+
+section.contact {
+  background: linear-gradient(-30deg, var(--color-contact-1), var(--color-contact-2));
 }
 
 a {
@@ -93,7 +129,7 @@ a:hover {
 }
 
 .blur {
-  animation: 1s ease-out blurry 1.25s;
+  animation: 1s ease-out blurry 1.10s;
   animation-fill-mode: backwards;
   border-radius: 50%;
   display: block;
@@ -117,14 +153,14 @@ a:hover {
   display: inline-block;
 }
 
-footer {
+.main--footer {
   align-items: center;
   bottom: 0;
   position: fixed;
   width: 100%;
 }
 
-footer>nav {
+.main--footer>nav {
   display: flex;
   height: var(--footer-height);
   justify-content: center;

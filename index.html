@@ -9,23 +9,61 @@
 </head>
 
 <body>
-  <main>
-    <header>
+  <main class="main">
+    <header class="main--header">
       <h1>DAVID CRUZ</h1>
       <h3>FRONTEND DEVELOPER - AMATEUR PHOTOGRAPHER</h3>
     </header>
-    <article>
-      <section id="paco">
+    <article class="main--article">
+      <section class="start">
         <div class="image-round profile-picture">
           <div class="blur"></div>
         </div>
       </section>
+      <section class="projects">
+        <ul>
+          <li>Proyecto 1</li>
+          <li>Proyecto 2</li>
+          <li>Proyecto 3</li>
+          <li>Proyecto 4</li>
+          <li>Proyecto 5</li>
+          <li>Proyecto 6</li>
+        </ul>
+      </section>
+      <section class="cv">
+        ¿?
+      </section>
+      <section class="contact">
+        <form action="" method="post">
+          <div>
+            <label for="nombre">
+              Nombre
+              <input type="text" name="nombre" id="nombre">
+            </label>
+          </div>
+          <div>
+            <label for="email">
+              Email
+              <input type="text" name="email" id="email">
+            </label>
+          </div>
+          <div>
+            <label for="motivacion">
+              Motivo de contacto
+              <textarea id="motivacion"></textarea>
+            </label>
+          </div>
+          <div>
+            <button type="submit">Enviar</button>
+          </div>
+        </form>
+      </section>
     </article>
-    <footer>
+    <footer class="main--footer">
       <nav>
         <ul class="inline-list">
-          <li><a href="#">link</a></li> | 
-          <li><a href="#">link</a></li> | 
+          <li><a href="#">link</a></li> |
+          <li><a href="#">link</a></li> |
           <li><a href="#">link</a></li>
         </ul>
       </nav>
