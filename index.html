@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DAVID CRUZ - FRONTEND DEVELOPER</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/css.css">
 </head>
 
@@ -12,12 +13,14 @@
   <main class="main">
     <header class="main--header">
       <h1>DAVID CRUZ</h1>
-      <h3>FRONTEND DEVELOPER - AMATEUR PHOTOGRAPHER</h3>
+      <h3>FRONTEND DEVELOPER</h3>
     </header>
     <article class="main--article">
       <section class="start">
         <div class="image-round profile-picture">
-          <div class="blur"></div>
+          <div class="blur">
+            
+          </div>
         </div>
       </section>
       <section class="projects">
@@ -35,26 +38,24 @@
       </section>
       <section class="contact">
         <form action="" method="post">
-          <div>
+          <div class="form--group">
             <label for="nombre">
-              Nombre
-              <input type="text" name="nombre" id="nombre">
+              <input type="text" name="nombre" id="nombre" placeholder="Nombre">
             </label>
           </div>
-          <div>
+          <div class="form--group">
             <label for="email">
-              Email
-              <input type="text" name="email" id="email">
+              <input type="text" name="email" id="email" placeholder="Email">
             </label>
           </div>
-          <div>
+          <div class="form--group">
             <label for="motivacion">
-              Motivo de contacto
-              <textarea id="motivacion"></textarea>
+              <textarea id="motivacion"
+              >Motivo de contacto</textarea>
             </label>
           </div>
-          <div>
-            <button type="submit">Enviar</button>
+          <div class="form--group">
+            <button type="submit"><i class="fa fa-camera-retro"></i>Enviar</button>
           </div>
         </form>
       </section>
@@ -62,13 +63,42 @@
     <footer class="main--footer">
       <nav>
         <ul class="inline-list">
-          <li><a href="#">link</a></li> |
-          <li><a href="#">link</a></li> |
-          <li><a href="#">link</a></li>
+          <li>
+            <a href="https://linkedin.com/in/davidcruzc" title="Linkedin" rel="external" target="_blank">
+              <i class="fa fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://codepen.io/daviz1982" title="Codepen" rel="external" target="_blank">
+              <i class="fa fa-codepen"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/daviz1982" title="Github" rel="external" target="_blank">
+              <i class="fa fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/daviz1982" title="Twitter" rel="external" target="_blank">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
         </ul>
       </nav>
+      <div class="footer-legend">
+        Code and design: David Cruz, 2021
+      </div>
     </footer>
   </main>
 </body>
 
 </html>
+
+<!-- 
+  TODOS
+  - links footer: pasarlos a debajo de la foto principal. (linkedin, codepen, 500px, twitter?, github)
+  - menu lateral fixed, con iluminación del elemento activo (como en bootstrap)
+  - Grid para los proyectos -- codepen, cosas que puso holamundo en el canal
+  - arreglar formulario contacto
+  
+-->
