@@ -2,9 +2,14 @@
 
 :root {
   --fonts: 'Comfortaa', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --base-font-size: 16px;
 
-  --h1-fsize: calc(1.5rem + 1vw);
-  --h3-fsize: calc(.5rem + .5vw);
+  --h1-font-size: calc(1.5rem + 1vw);
+  --h2-font-size: calc(.65rem + .5vw);
+  --h3-font-size: calc(1.25rem + .5vw);
+  --h4-font-size: calc(.8rem + .5vw);
+
+  --margin-section-title: 5rem auto 1.5rem;
 
   --color-bg-body: #393939;
   --color-text: #fdeddd;
@@ -25,11 +30,15 @@
   --header-height: 20vh;
   --header-min-height: 10rem;
   --section-height: 100vh;
-  --section-width: 100vw;
+  --section-width: 100%;
 
-  --footer-height: 6rem;
-  --footer-min-width: 25rem;
+  --width-grid-gap: 2rem;
+
+  --footer-height: 15vh;
+  --footer-min-width: 20%;
   --footer-width: 33vw;
+
+  --button-font-size: 1.25rem;
 }
 
 * {
@@ -38,7 +47,7 @@
   font-family: var(--fonts);
   margin: 0;
   padding: 0;
-  text-shadow: 0 0 3px rgba(0,0,0,.25),0 0 7px rgba(255,255,255,.25);
+  text-shadow: 0 0 3px rgba(0, 0, 0, .25), 0 0 7px rgba(255, 255, 255, .25);
 }
 
 html {
@@ -51,12 +60,22 @@ html {
 body {
   background-color: var(--color-bg-body);
   height: 100%;
-  font-size: 16px;
+  font-size: var(--base-font-size);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-shadow: 0 5px 5px rgba(180, 180, 180, .5);
 }
 
 .main {
   animation: 1s init-main ease-in-out;
   animation-fill-mode: backwards;
+  overflow-x: hidden;
 }
 
 .main--header {
@@ -72,7 +91,7 @@ body {
 }
 
 .main--header>h1 {
-  font-size: var(--h1-fsize);
+  font-size: var(--h1-font-size);
   font-weight: 300;
   line-height: 1;
   margin-top: 1rem;
@@ -80,8 +99,8 @@ body {
   text-align: center;
 }
 
-.main--header>h3 {
-  font-size: var(--h3-fsize);
+.main--header>h2 {
+  font-size: var(--h2-font-size);
   font-weight: 400;
   line-height: 1;
   margin-top: 1rem;
@@ -101,8 +120,28 @@ section.contact {
   width: var(--section-width);
 }
 
+section.projects,
+section.cv,
+section.contact {
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+section.projects h3,
+section.cv h3,
+section.contact h3 {
+  font-size: var(--h3-font-size);
+  margin: var(--margin-section-title);
+}
+
 section.projects {
   background: linear-gradient(-30deg, var(--color-projects-1), var(--color-projects-2));
+}
+
+section.projects h4 {
+  font-size: var(--h4-font-size);
+  padding-bottom: .6rem;
+  text-align: center;
 }
 
 section.cv {
@@ -161,15 +200,38 @@ a:hover {
   display: inline-block;
 }
 
+
+section.projects .projects--container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-gap: var(--width-grid-gap);
+  padding: var(--width-grid-gap);
+}
+
+section.projects .projects--container>div {
+  background: #572b156b;
+  box-shadow: 0 .24rem .8rem #000;
+  padding: 1.5rem;
+  border-radius: calc(var(--width-grid-gap)/3);
+}
+
+.cv--container {
+  width: 100%;
+}
+
 section.contact form {
   border-radius: .5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  margin-bottom: 20vh;
+  margin: 0 auto 20vh;
   max-width: 40rem;
   min-height: 50vh;
   width: 80vw;
+}
+
+.form--container {
+  width: 100%;
 }
 
 .form--group {
@@ -181,7 +243,8 @@ section.contact form {
   margin: 0 10%;
 }
 
-.form--group input, .form--group textarea {
+.form--group input,
+.form--group textarea {
   color: #292929;
   display: block;
   font-size: 1rem;
@@ -203,23 +266,26 @@ section.contact form {
   border-width: 1px 0 0 0;
   color: #360333;
   display: block;
-  font-size: 1.5rem;
+  font-size: var(--button-fontsize);
   margin: auto;
   max-width: 10rem;
   padding: .6rem;
   text-align: center;
   width: 25vw;
 }
-.form--group button > i {
+
+.form--group button>i {
   color: #360333;
   margin-right: 1rem;
 }
-.form--group button:hover  {
+
+.form--group button:hover {
   border-color: transparent;
   box-shadow: 0 0.2rem 1.2rem 0.2rem var(--color-contact-2);
   cursor: pointer;
 }
-.form--group button:active  {
+
+.form--group button:active {
   background-color: var(--color-contact-1);
   background-image: none;
   border-color: transparent;
@@ -229,40 +295,45 @@ section.contact form {
 
 .main--footer {
   align-items: center;
+  backdrop-filter: blur(10px);
+  background-color: #fff2;
+  border-radius: 50% 50% 0 0;
   bottom: 0;
   height: var(--footer-height);
+  padding: 2vh 0;
   position: fixed;
   width: 100%;
 }
 
-.main--footer > * {
+.main--footer>* {
   align-items: center;
   display: flex;
   margin: 0 auto;
   min-width: var(--footer-min-width);
   width: var(--footer-width);
 }
-.main--footer > nav ul {
+
+.main--footer>nav ul {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
 }
 
-.main--footer > nav li {
+.main--footer>nav li {
   flex: 0 1 2rem;
   font-size: 1.8rem;
   text-align: center;
 }
 
-.main--footer > nav li a {
+.main--footer>nav li a {
   border-radius: 50%;
   display: inline-block;
   height: 1.8rem;
   width: 1.8rem;
 }
 
-.main--footer > nav li a:hover {
-background-color: var(--color-contact-2-bg);
+.main--footer>nav li a:hover {
+  background-color: var(--color-contact-2-bg);
 }
 
 .main--footer .footer-legend {
