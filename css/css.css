@@ -47,7 +47,7 @@
   font-family: var(--fonts);
   margin: 0;
   padding: 0;
-  text-shadow: 0 0 3px rgba(0, 0, 0, .25), 0 0 7px rgba(255, 255, 255, .25);
+  /* text-shadow: 0 0 3px rgba(0, 0, 0, .25), 0 0 7px rgba(255, 255, 255, .25); */
 }
 
 html {
@@ -164,7 +164,7 @@ a:hover {
 }
 
 .image-round {
-  border-radius: 50%;
+  border-radius: 32% 68% 32% 68% / 35% 24% 76% 65%;
   display: block;
   height: 12rem;
   background-image: url("../img/128.png");
@@ -178,7 +178,7 @@ a:hover {
 .blur {
   animation: 1s ease-out blurry 1.10s;
   animation-fill-mode: backwards;
-  border-radius: 50%;
+  border-radius: 32% 68% 32% 68% / 35% 24% 76% 65%;
   display: block;
   height: 100%;
   position: absolute;
@@ -295,8 +295,6 @@ section.contact form {
 
 .main--footer {
   align-items: center;
-  backdrop-filter: blur(10px);
-  background-color: #fff2;
   border-radius: 50% 50% 0 0;
   bottom: 0;
   height: var(--footer-height);
@@ -307,9 +305,11 @@ section.contact form {
 
 .main--footer>* {
   align-items: center;
+  backdrop-filter: blur(10px);
   display: flex;
   margin: 0 auto;
   min-width: var(--footer-min-width);
+
   width: var(--footer-width);
 }
 
@@ -336,11 +336,16 @@ section.contact form {
   background-color: var(--color-contact-2-bg);
 }
 
+.main--footer>nav li a i {
+  text-shadow: 0 0 3px #545454;
+}
+
 .main--footer .footer-legend {
   display: block;
   font-size: .8rem;
   margin-top: 1.33rem;
   text-align: center;
+  text-shadow: 0 0 3px #545454;
 }
 
 @keyframes blurry {
