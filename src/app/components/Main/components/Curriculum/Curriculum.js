@@ -2,6 +2,9 @@ import React from 'react'
 
 export default function Curriculum() {
   return (
-    <>hello</>
+    <section className='cv'>
+      <h3>Currículum</h3>
+      <div className='cv--container'>¿?</div>
+    </section>
   )
 }

@@ -7,11 +7,11 @@ import Contact from './components/Contact'
 
 export default function Main() {
   return (
-    <>
+    <article className='main--article'>
       <About></About>
       <Projects></Projects>
       <Curriculum></Curriculum>
       <Contact></Contact>
-    </>
+    </article>
   )
 }

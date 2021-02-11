@@ -1,1 +1,44 @@
 @import-normalize;
+
+:root {
+  --fonts: 'Comfortaa', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --base-font-size: 16px;
+
+  --h1-font-size: calc(1.5rem + 1vw);
+  --h2-font-size: calc(.65rem + .5vw);
+  --h3-font-size: calc(1.25rem + .5vw);
+  --h4-font-size: calc(.8rem + .5vw);
+
+  --margin-section-title: 5rem auto 1.5rem;
+
+  --color-bg-body: #393939;
+  --color-text: #fdeddd;
+  --color-link: #cdcdcd;
+  --color-link-hover: #cffdfd;
+
+  --color-start-1: #413c8ef7;
+  --color-start-2: #3bd6406e;
+  --color-projects-1: #d1a822e0;
+  --color-projects-2: #d1361bf7;
+  --color-cv-1: #8adf45f7;
+  --color-cv-2: #ff00d49e;
+  /* --color-contact-1: #9d2babd6; */
+  --color-contact-1: #00abffcc;
+  --color-contact-2: #5611b142;
+  --color-contact-2-bg: #5611b136;
+
+  --header-height: 20vh;
+  --header-min-height: 10rem;
+  --section-height: 100vh;
+  --section-width: 100%;
+
+  --width-grid-gap: 2rem;
+
+  --footer-height: 15vh;
+  --footer-min-width: 20%;
+  --footer-width: 33vw;
+
+  --button-font-size: 1.25rem;
+}
+
+@import './todo'
