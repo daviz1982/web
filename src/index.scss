@@ -1,4 +1,6 @@
-@import-normalize;
+// @import-normalize;
+@import './styles/functions';
+@import './styles/animations';
 
 :root {
   --fonts: 'Comfortaa', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -41,4 +43,41 @@
   --button-font-size: 1.25rem;
 }
 
-@import 'todo'
+*,
+*::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: var(--color-text);
+  font-family: var(--fonts);
+  height: 100%;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  background-color: var(--color-bg-body);
+  height: 100%;
+  font-size: var(--base-font-size);
+}
+
+// HEADINGS
+#{headings(1,6)} {
+  text-shadow: 0 5px 5px rgba(180, 180, 180, .5);
+}
+
+a {
+  color: var(--color-link);
+  transition: all .3s ease-in-out;
+}
+
+a:hover {
+  box-shadow: 0 0.2rem 1.2rem 0.2rem var(--color-contact-2);
+  color: var(--color-link-hover);
+  transition: all .3s ease-out;
+}

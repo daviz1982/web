@@ -1,0 +1,7 @@
+// @import '../todo';
+
+.main {
+  animation: 1s init-main ease-in-out;
+  animation-fill-mode: backwards;
+  overflow: hidden;
+}

@@ -1,13 +1,14 @@
 import React from 'react'
+import './Contact.scss'
 
 export default function Contact() {
   return (
-    <section className='contact'>
+    <section className='portfolio-section section-contact'>
       <h3>Contacto</h3>
       <div className='form--container'>
         <form action='' method='post'>
           <div className='form--group'>
-            <label for='nombre'>
+            <label htmlFor='nombre'>
               <input
                 type='text'
                 name='nombre'
@@ -17,12 +18,12 @@ export default function Contact() {
             </label>
           </div>
           <div className='form--group'>
-            <label for='email'>
+            <label htmlFor='email'>
               <input type='text' name='email' id='email' placeholder='Email' />
             </label>
           </div>
           <div className='form--group'>
-            <label for='motivacion'>
+            <label htmlFor='motivacion'>
               <textarea id='motivacion'>Motivo de contacto</textarea>
             </label>
           </div>

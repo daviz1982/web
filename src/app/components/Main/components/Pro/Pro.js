@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-export default function Projects() {
+import './Pro.scss'
+
+export default function Pro() {
   const project = {
     title: 'Proyecto',
     desc:
@@ -15,12 +17,12 @@ export default function Projects() {
   }, [])
 
   return (
-    <section className='projects'>
+    <section className='portfolio-section section-projects'>
       <h3>Proyectos</h3>
       <div className='projects--container'>
         {listProjects !== undefined &&
           listProjects.map((element, index) => (
-            <div key={index}>
+            <div className='project' key={index}>
               <h4>{`${element.title} ${index + 1}`}</h4>
               <p>{element.desc}</p>
             </div>
